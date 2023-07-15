@@ -2,9 +2,9 @@
   "name": "ms-lt",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --dark",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export --dark"
   },
   "dependencies": {
     "@slidev/cli": "^0.42.5",
@@ -13,6 +13,7 @@
     "slidev-theme-penguin": "^1.7.1"
   },
   "devDependencies": {
-    "@iconify-json/logos": "^1.1.33"
+    "@iconify-json/logos": "^1.1.33",
+    "playwright-chromium": "^1.36.1"
   }
 }
