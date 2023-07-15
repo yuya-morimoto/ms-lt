@@ -1,0 +1,13 @@
+:root {
+  --slidev-theme-primary: #d57df8;
+}
+
+h1 {
+  background-color: #cd54cd;
+  background-image: linear-gradient(45deg, #e29ff2 10%, #d57df8 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}

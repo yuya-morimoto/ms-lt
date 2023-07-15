@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: https://source.unsplash.com/collection/94734566/1920x1080
+background: /background.jpg
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -11,8 +11,13 @@ info: |
 drawings:
   persist: false
 transition: slide-left
-title: LT
+title: MicroService For 個人開発
+hideInToc: true
 ---
+
+<!-- =============== -->
+<!-- 1ページ目 -->
+<!-- =============== -->
 
 # MicroService For 個人開発
 
@@ -25,409 +30,160 @@ title: LT
 </div>
 
 <div class="abs-br m-6 flex gap-2">
- 
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+<a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
+<carbon-logo-github />
+</a>
+
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+---
+
+<!-- =============== -->
+<!-- 2ページ目 -->
+<!-- =============== -->
+
+# 目次
+
+- 自己紹介
+- Monolithic Architecture とは
+- MicroService Architecture とは
+- BFF パターン とは
 
 ---
 
-## transition: fade-out
+<!-- =============== -->
+<!-- 3ページ目 -->
+<!-- =============== -->
 
-# What is Slidev?
+# 自己紹介
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+- 名前：森本悠矢(Lv.23)
+- 所属：Web 開発 5G - AirMate(BE,FE を少々)
+- 趣味：開発・将棋(居飛車党)・ランニング?
+- 最近興味ある技術： [Earthly](https://earthly.dev "Earhly"), [Bazel](https://bazel.build/?hl=en "Bazel")
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+## ![Icon](/sisyo.png)
 
-<br>
-<br>
+---
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+<!-- =============== -->
+<!-- 4ページ目 -->
+<!-- =============== -->
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
+# Monolithic Architecture とは
+
+  <img src="/public/monolithic.png">
 
 <style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-
-## layout: default
-
-# Table of contents
-
-```
-<Toc minDepth="1" maxDepth="5"></Toc>
-```
-
-<Toc></Toc>
-
----
-
-transition: slide-up
-
-## level: 2
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|                                                    |                             |
-| -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
-
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number;
-  firstName: string;
-  lastName: string;
-  role: string;
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id);
-  const newUser = { ...user, ...update };
-  saveUser(id, newUser);
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
+  img {
+    max-height: 400px;
+    margin: 0 auto;
+  }
 </style>
 
 ---
 
-# Components
+<!-- =============== -->
+<!-- 4ページ目 -->
+<!-- =============== -->
 
-<div grid="~ cols-2 gap-4">
-<div>
+# Microservice Architecture とは
 
-You can use Vue components directly inside your slides.
+  <img src="/public/microservice.png">
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-
-## class: px-20
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-
-## preload: false
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div v-motion :initial="{ x: -80 }" :enter="{ x: 0 }">Slidev</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
+<style>
+  img {
+    max-height: 400px;
+    margin: 0 auto;
   }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
+</style>
 
 ---
 
-# LaTeX
+<!-- =============== -->
+<!-- 5ページ目 -->
+<!-- =============== -->
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+# BFF パターン とは
 
-<br>
+  <img src="/public/microservice-bff.png">
 
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
+<style>
+  img {
+    max-height: 400px;
+    margin: 0 auto;
   }
-  frame "Foo" {
-    [Frame 4]
+</style>
+
+---
+
+<!-- =============== -->
+<!-- 6ページ目 -->
+<!-- =============== -->
+
+# 比較
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Monolithic</th>
+            <th>Microservice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">設計</th>
+            <td>単一のコードベースでAPIも少ない<br/>比較的設計が容易</td>
+            <td>相互通信する独立したコンポーネントでAPIも多い<br/>設計は複雑化</td>
+        </tr>
+        <tr>
+            <th scope="row">データ整合性</th>
+            <td>同一プロセス・共通DBを使用するため整合性が取りやすい</td>
+            <td>サービス毎に別プロセス、別DBを使うので整合性が取りにくい</td>
+        </tr>
+        <tr>
+            <th scope="row">リソース管理</th>
+            <td>共通コードの管理がしやすい<br/>デプロイ単位が大きくテストやデプロイに時間がかかる</td>
+            <td>リポジトリが複数になり管理しにくい(Monorepoで一元化)<br/>デプロイ単位が小さくテストやデプロイ時間短縮</td>
+        </tr>
+        <tr>
+            <th scope="row">スケーリング</th>
+            <td>細かいスケーリングが出来ない</td>
+            <td>機能毎にスケーリングが可能(認証のみスケールアップする等)</td>
+        </tr>
+        <tr>
+            <th scope="row">技術(言語・FW)</th>
+            <td>基本的に1言語&自由な言語・FW</td>
+            <td>機能毎に自由に選定可能&基本的に軽量FW&<br/>通信速度のためgRPC等扱えると良い&柔軟性あり</td>
+        </tr>
+        <tr>
+            <th scope="row">コスト</th>
+            <td>比較的抑えめ</td>
+            <td>プロセス(コンテナ)が増えコストがかかりやすいが、細かいスケーリングやFaaSを混ぜて抑えることも可能そう</td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+  table {
+    font-size: 12px
   }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
+  td {
+    font-size: 12px
+  }
+</style>
 
 ---
 
-src: ./pages/multiple-entries.md
-hide: false
+<h1>以上</h1>
 
----
-
----
-
-layout: center
-class: text-center
-
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+<style>
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
