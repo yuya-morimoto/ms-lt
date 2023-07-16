@@ -15,16 +15,12 @@ title: MicroService For 個人開発
 hideInToc: true
 ---
 
-<!-- =============== -->
-<!-- 1ページ目 -->
-<!-- =============== -->
-
 # MicroService For 個人開発
 
-暇だったので Slidev 使ってみた
+暇だったのでついでに Slidev 使ってみた
 
 <div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-purple bg-opacity-10">
     Press Space for next page <carbon:arrow-right class="inline"/>
   </span>
 </div>
@@ -39,27 +35,27 @@ hideInToc: true
 
 ---
 
-<!-- =============== -->
-<!-- 2ページ目 -->
-<!-- =============== -->
-
 # 目次
 
 - 自己紹介
-- Monolithic Architecture とは
-- MicroService Architecture とは
-- BFF パターン とは
+- アーキテクチャについて
+  - Monolithic Architecture とは
+  - Microservice Architecture とは
+  - BFF パターン とは
+  - 比較
+- 個人開発について
+  - 個人開発やってる理由・目的
+  - システム構成
+  - Microservice 採用してみたメリデメ
+  - 今回の推し技術
+- 最後に
 
 ---
-
-<!-- =============== -->
-<!-- 3ページ目 -->
-<!-- =============== -->
 
 # 自己紹介
 
 - 名前：森本悠矢(Lv.23)
-- 所属：Web 開発 5G - AirMate(BE,FE を少々)
+- 所属：Web 開発 5G - BE,FE を少々
 - 趣味：開発・将棋(居飛車党)・ランニング?
 - 最近興味ある技術： [Earthly](https://earthly.dev "Earhly"), [Bazel](https://bazel.build/?hl=en "Bazel")
 
@@ -67,60 +63,27 @@ hideInToc: true
 
 ---
 
-<!-- =============== -->
-<!-- 4ページ目 -->
-<!-- =============== -->
+<h1 class="abs-center">アーキテクチャについて</h1>
+
+---
 
 # Monolithic Architecture とは
 
-  <img src="/public/monolithic.png">
-
-<style>
-  img {
-    max-height: 400px;
-    margin: 0 auto;
-  }
-</style>
+  <img src="/public/monolithic.png" class="img-center">
 
 ---
-
-<!-- =============== -->
-<!-- 5ページ目 -->
-<!-- =============== -->
 
 # Microservice Architecture とは
 
-  <img src="/public/microservice.png">
-
-<style>
-  img {
-    max-height: 400px;
-    margin: 0 auto;
-  }
-</style>
+  <img src="/public/microservice.png" class="img-center">
 
 ---
-
-<!-- =============== -->
-<!-- 6ページ目 -->
-<!-- =============== -->
 
 # BFF パターン とは
 
-  <img src="/public/microservice-bff.png">
-
-<style>
-  img {
-    max-height: 400px;
-    margin: 0 auto;
-  }
-</style>
+  <img src="/public/microservice-bff.png" class="img-center">
 
 ---
-
-<!-- =============== -->
-<!-- 7ページ目 -->
-<!-- =============== -->
 
 # 比較
 
@@ -166,41 +129,58 @@ hideInToc: true
     </tbody>
 </table>
 
-<style>
-  table {
-    font-size: 12px
-  }
-  td {
-    font-size: 12px
-  }
-</style>
+---
+
+<h1 class="abs-center">個人開発について</h1>
 
 ---
 
-<!-- =============== -->
-<!-- 8ページ目 -->
-<!-- =============== -->
+# 個人開発やってる理由・目的
 
-# 個人開発システム構成図
-
-  <img src="/public/my-system.png">
-
-<style>
-  img {
-    max-height: 400px;
-    margin: 0 auto;
-  }
-</style>
+- 要領悪目のコスパ悪い人間
+  - 1.なんかこの技術おもろそう気になる
+  - 2.ドキュメント読む・チュートリアルする
+  - 3.理解度浅い
+  - 4.なんか作るか
+- 0-1 での新規開発が好き
 
 ---
 
-<h1>以上</h1>
+# システム構成
 
-<style>
-  h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-</style>
+  <img src="/public/my-system.png" class="img-center">
+
+---
+
+# Microservice 採用してみたメリデメ
+
+- メリット
+  - 技術の幅が広がりやすい
+  - 1 度の開発で複数の技術使える(Swift, TCA, Go, Nest, Pulumi あたりは初戦)
+  - MicroService＊BFF の体験
+  - 技術への飽きが来にくい
+- デメリット
+  - 初期段階での設計辛い
+  - コストかかりそう...
+
+---
+
+# 今回の推し技術
+
+- Pulumi
+  - プログラミング言語で IaC 組める
+- SwiftUI \* The Composable Architecture
+  - Redux(Flux)とほとんど同じ考え方で状態管理できる
+- CloudRun で Sidecars 可能に(2023/05 くらいから)
+
+---
+
+<h1 class="abs-center">最後に</h1>
+
+---
+
+<h1 class="abs-center">好きな技術使いましょう</h1>
+
+---
+
+<h1 class="abs-center">以上</h1>

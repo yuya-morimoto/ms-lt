@@ -11,3 +11,22 @@ h1 {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-center {
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+table {
+  font-size: 12px;
+}
+td {
+  font-size: 12px;
+}
