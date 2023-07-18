@@ -57,6 +57,7 @@ hideInToc: true
 - 名前：森本悠矢(Lv.23)
 - 所属：Web 開発 5G - BE,FE を少々
 - 趣味：開発・将棋(居飛車党)・ランニング?
+- ハマっていること：Vim(Neovim)
 - 最近興味ある技術： [Earthly](https://earthly.dev "Earhly"), [Bazel](https://bazel.build/?hl=en "Bazel")
 
 ## ![Icon](/sisyo.png)
@@ -137,7 +138,7 @@ hideInToc: true
 
 # 個人開発やってる理由・目的
 
-- 要領悪目のコスパ悪い人間
+- 要領悪い人間
   - 1.なんかこの技術おもろそう気になる
   - 2.ドキュメント読む・チュートリアルする
   - 3.理解度浅い
@@ -157,7 +158,7 @@ hideInToc: true
 - メリット
   - 技術の幅が広がりやすい
   - 1 度の開発で複数の技術使える(Swift, TCA, Go, Nest, Pulumi あたりは初戦)
-  - MicroService＊BFF の体験
+  - MicroService \* BFF の体験
   - 技術への飽きが来にくい
 - デメリット
   - 初期段階での設計辛い
